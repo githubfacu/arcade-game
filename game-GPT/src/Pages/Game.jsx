@@ -4,6 +4,8 @@ import GameContainer from '../components/GameContainer';
 import Carousel from '../components/Carousel';
 import Button from '../components/Button';
 import { useSound } from '../Context/SoundContext';
+import Carousel1Item from '../components/CarouselUnItem';
+import '../styles/Game.css'
 
 const Game = () => {
   const location = useLocation();
@@ -50,9 +52,16 @@ const Game = () => {
   return (
     <>
       {showGameContainer && <GameContainer characterImage={characterImage} />}
-      {gameContainerUnmounted && playIsThisIt()}
-      {gameContainerUnmounted && <Carousel premios={premios} />}
-      {gameContainerUnmounted && <Button onButtonClick={handleButtonClick} />}
+      {gameContainerUnmounted && 
+        <div className='container1'>
+          {playIsThisIt()}
+          <Carousel premios={premios} />
+          <div className='container2'>
+            <Carousel1Item premios={premios} />
+            <Button onButtonClick={handleButtonClick} />            
+          </div>
+
+        </div>}
     </>
   );
 };

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useCarousel = (premios) => {
+const useCarousel = (premios, itemCount=9) => {
   const [currentPremioIndex, setCurrentPremioIndex] = useState(0);
   const [visiblePremios, setVisiblePremios] = useState(premios);
   const [transition, setTransition] = useState(false);
@@ -22,10 +22,10 @@ const useCarousel = (premios) => {
     const updatedVisiblePremios = [
       ...premios.slice(currentPremioIndex),
       ...premios.slice(0, currentPremioIndex),
-    ].slice(0, 9);
+    ].slice(0, itemCount);
 
     setVisiblePremios(updatedVisiblePremios);
-  }, [currentPremioIndex, premios]);
+  }, [currentPremioIndex, itemCount, premios]);
 
   const containerStyle = {
     transition: transition ? 'transform 0.5s ease-in-out' : 'none',

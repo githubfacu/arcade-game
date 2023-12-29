@@ -1,13 +1,24 @@
 .juego-container {
   width: 100%;
-  background-color: blueviolet;
+  background-color: rgb(43, 55, 226);
   padding: 1rem;
   padding-right: 0;
   align-self: start;
   position: relative;
+  margin-top: 2rem;
+}
+
+.carousel-unico{
+  width: 130px;
+  background-color: black;
+  padding: 1.5rem;
+  padding-right: 0;
+  align-self: center;
+  border: 10px solid rgb(43, 55, 226);
 }
 
 .premio {
   width: 100px;
+  height: 102px;
   margin-right: 20px;
 }

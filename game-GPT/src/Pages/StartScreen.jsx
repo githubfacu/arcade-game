@@ -68,16 +68,16 @@ const StartScreen = ({ onEnterPress, onTransitionComplete }) => {
         width: '100%',
         height: '100vh',
         background: 'black',
-        backgroundSize: 'cover',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         color: 'white',
+        border: '10px solid white',
         transition: 'visibility 0.5s ease-in-out', // Agrega una transición
       }}
     >
-      <img src="../../Images/Binary Land 50.png" alt="logo" style={{maxWidth: '50%'}}/>
+      <img src="/Images/Binary Land 50.png" alt="logo" style={{maxWidth: '50%'}}/>
       <h2 style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.4s ease-in-out' }}>
         Press Enter to continue
       </h2>
