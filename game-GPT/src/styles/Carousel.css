@@ -1,0 +1,13 @@
+.juego-container {
+  width: 100%;
+  background-color: blueviolet;
+  padding: 1rem;
+  padding-right: 0;
+  align-self: start;
+  position: relative;
+}
+
+.premio {
+  width: 100px;
+  margin-right: 20px;
+}
