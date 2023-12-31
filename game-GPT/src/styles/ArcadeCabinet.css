@@ -128,6 +128,7 @@
     border-radius: 50%;
     border: 5px solid #4c4c4c;
     z-index: 3;
+    filter: grayscale(100%);
   }
   .arcade-machine .screen-container .joystick:before {
     height: 90%;

@@ -44,6 +44,7 @@ const CharacterSelection = () => {
             alt="Personaje 2"
             onMouseOver={() => handleCharacterHover()}
             onClick={() => handleCharacterClick(2)}
+            style={{border: '3px solid #399fda'}}
           />
         </div>
     </div>

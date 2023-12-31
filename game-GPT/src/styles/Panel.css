@@ -1,9 +1,10 @@
 .contenedor-de-premios{
     display: flex;
     flex-direction: column;
-    background-color: black;
+    background-color: rgb(10, 10, 10);
     padding: 20px;
-    border: 10px solid rgb(237, 110, 0);
+    border: 10px solid white;
+  /*  border: 10px solid rgb(237, 110, 0); */
     justify-self: flex-end;
 }
 

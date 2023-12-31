@@ -1,6 +1,8 @@
 .juego-container {
   width: 90%;
-  background-color: rgb(43, 55, 226);
+  background-color: rgb(10, 10, 10);
+  box-shadow: 0 0 10px 5px #ff2aff;
+  box-shadow: 0 0 10px 5px #2eff2a;
   padding-left: 20px;
   padding-bottom: 20px;
   align-self: center;

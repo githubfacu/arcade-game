@@ -1,11 +1,11 @@
 .fondo{
     height: 100vh;
-    background: black;
+    background: rgb(10, 10, 10);
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
-    padding-top: 10%;
+    padding-top: 6%;
     transition: visibility 0.5s ease-in-out;
 }
 
@@ -21,9 +21,10 @@
 
 .personajes img{
     width: 150px;
-    padding: .5rem;
-    border: 10px solid gold;
+    padding: .8rem;
+    border: 3px solid #de40de;
     margin: 3rem;
+    margin-top: 5rem;
 }
 
 .personajes img:hover{
