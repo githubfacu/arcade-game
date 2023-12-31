@@ -1,9 +1,3 @@
-.div-button{
-  display: flex;
-  margin-left: .5rem;
-  margin-top: 1.5rem;
-}
-
 .video-game-button {
 	text-shadow: 1px 1px pink, -1px -1px maroon;
 	line-height: 3px;
@@ -12,7 +6,7 @@
 	text-align:center;
 	display: inline-block;
 	width: 70px;
-  height: 60px;
+  height: 55px;
   border: none;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
@@ -38,3 +32,7 @@
 	top: 6px;
 }
 
+.video-game-button:hover{
+	cursor: url('../Images/cursor\ gamer\ .cur'), auto;
+	transform: scale(.9);
+}

@@ -13,16 +13,12 @@ const App = () => {
     setShowStartScreen(false);
   };
 
-  const handleTransitionComplete = () => {
-    console.log('Transición completada');
-  };
-
   return (
       <SoundProvider>
         <Routes>
           <Route path="/" element={showStartScreen ? (
                 <StartScreen 
-                onEnterPress={handleEnterPress} onTransitionComplete={handleTransitionComplete}/>
+                onEnterPress={handleEnterPress} />
               ) : (
                 <Navigate to="/character-selection" />
               )

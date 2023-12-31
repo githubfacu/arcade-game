@@ -1,11 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const StartScreen = ({ onEnterPress, onTransitionComplete }) => {
+const StartScreen = ({ onEnterPress }) => {
   const [visible, setVisible] = useState(true);
   const navigate = useNavigate(); 
   const startScreenRef = useRef();
   const audio = new Audio('/Audios/init.wav');
+
+  const temporizador = () => {setInterval(() => {
+      setTimeout(() => {
+        setVisible(false);
+
+        setTimeout(() => {
+          setVisible(true);
+        }, 250);
+      }, 125);
+    }, 500);
+  }
 
   useEffect(() => {
     startScreenRef.current.focus();
@@ -18,6 +29,7 @@ const StartScreen = ({ onEnterPress, onTransitionComplete }) => {
       await audio.play();
 
       setTimeout(() => {
+        sessionStorage.setItem('pin', 'A')
         navigate('/character-selection');
       }, 2000);
     }
@@ -27,6 +39,7 @@ const StartScreen = ({ onEnterPress, onTransitionComplete }) => {
     await audio.play();
 
     setTimeout(() => {
+      sessionStorage.setItem('pin', 'A')
       navigate('/character-selection');
     }, 2000);
   };
@@ -41,12 +54,13 @@ const StartScreen = ({ onEnterPress, onTransitionComplete }) => {
         }, 1000);
       }, 500);
     }, 2000);
+    
 
     const keydownListener = (event) => {
       if (event.key === 'Enter') {
         clearInterval(blinkInterval);
+        temporizador()
         document.removeEventListener('keydown', keydownListener);
-        onTransitionComplete();
       }
     };
 
@@ -56,7 +70,8 @@ const StartScreen = ({ onEnterPress, onTransitionComplete }) => {
       clearInterval(blinkInterval);
       document.removeEventListener('keydown', keydownListener);
     };
-  }, [onEnterPress, onTransitionComplete]);
+  }, [onEnterPress]);
+
 
   return (
     <div
@@ -77,7 +92,7 @@ const StartScreen = ({ onEnterPress, onTransitionComplete }) => {
         transition: 'visibility 0.5s ease-in-out', // Agrega una transición
       }}
     >
-      <img src="/Images/Binary Land 50.png" alt="logo" style={{maxWidth: '50%'}}/>
+      <img src="/Images/Binary Land 50.png" alt="logo" style={{ marginBottom: '.5rem', maxWidth: '50%'}}/>
       <h2 style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.4s ease-in-out' }}>
         Press Enter to continue
       </h2>

@@ -3,8 +3,8 @@ import Premio from './Premio';
 import useCarousel from '../hooks/useCarousel';
 import '../styles/Carousel.css';
 
-const Carousel1Item = ({ premios }) => {
-  const { visiblePremios, containerStyle } = useCarousel(premios, 1);
+const CarouselUnItem = ({ premios, pause, onVisibleChange }) => {
+  const { visiblePremios, containerStyle } = useCarousel(premios, pause, onVisibleChange, 1, 4);
 
   return (
     <div className="carousel-unico" style={containerStyle}>
@@ -15,4 +15,4 @@ const Carousel1Item = ({ premios }) => {
   );
 };
 
-export default Carousel1Item;
+export default CarouselUnItem;

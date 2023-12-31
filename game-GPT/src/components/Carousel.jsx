@@ -3,8 +3,8 @@ import Premio from './Premio';
 import useCarousel from '../hooks/useCarousel';
 import '../styles/Carousel.css';
 
-const Carousel = ({ premios }) => {
-  const { visiblePremios, containerStyle } = useCarousel(premios);
+const Carousel = ({ premios, pause }) => {
+  const { visiblePremios, containerStyle } = useCarousel(premios, pause);
 
 
   return (

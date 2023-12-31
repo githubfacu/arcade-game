@@ -1,21 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import GameContainer from '../components/GameContainer';
 import Carousel from '../components/Carousel';
 import Button from '../components/Button';
 import { useSound } from '../Context/SoundContext';
-import Carousel1Item from '../components/CarouselUnItem';
+import CarouselUnItem from '../components/CarouselUnItem';
+import Panel from '../components/Panel';
+import ArcadeCabinet from '../components/ArcadeCabinet';
+import ItemContainer from '../components/ItemContainer';
 import '../styles/Game.css'
 
 const Game = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const character = new URLSearchParams(location.search).get('character');
   const characterImage = character === '1' ? '/Images/malon.png' : '/Images/gurin.png';
   const [showGameContainer, setShowGameContainer] = useState(true);
   const [gameContainerUnmounted, setGameContainerUnmounted] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [pauseCarousel, setPauseCarousel] = useState(false);
+  const [visiblePremioIndex, setVisiblePremioIndex] = useState(0);
   const [tirosRestantes, setTirosRestantes] = useState(3);
   const { playIsThisIt } = useSound();
+  const [panelPremios, setPanelPremios] = useState([]);
 
   const premios = [
     { id: 1, src: '/Images/premios/Binary_Land_Cake.png', alt: 'Premio 1' },
@@ -30,35 +36,77 @@ const Game = () => {
   ];
 
   useEffect(() => {
-    // Desmontar el componente después de 3 segundos
-    const timeoutId = setTimeout(() => {
-      setShowGameContainer(false);
-      setGameContainerUnmounted(true);
-    }, 3000);
 
-    // Limpiar el temporizador al desmontar el componente Game.jsx
-    return () => clearTimeout(timeoutId);
+    if(sessionStorage.getItem('pin')){
+      const timeoutId = setTimeout(() => {
+        setShowGameContainer(false);
+        setGameContainerUnmounted(true);
+        //sessionStorage.clear()
+      }, 3000);
+    return () => clearTimeout(timeoutId);      
+    }else{
+      window.location.replace('/character-selection')
+    }
+
   }, []);
 
 
   const handleButtonClick = () => {
+    const audio = new Audio('/Audios/bonus-alert-767.wav');
+    audio.play();
+
     if (tirosRestantes > 0) {
-      // Lógica para lanzar la Button hacia el carrusel
+
+      setPauseCarousel(true);
+      setTimeout(() => {
+        setPauseCarousel(false);
+      }, 3000);
+
+      const currentIndex = visiblePremioIndex;
+      console.log('Índice del premio visible:', currentIndex);
+
       // Puedes actualizar el estado de tirosRestantes y otras lógicas aquí
     }
   };
 
+  const handleVisiblePremioChange = (index) => {
+    setVisiblePremioIndex(index);
+  };
+
+  useEffect(() => {
+
+    setTimeout(()=>{
+      playIsThisIt();
+    }, 3000)
+  }, []);
+
+  const asignarPremiosAlPanel = () => {
+    const premiosAleatorios = [...premios];
+    premiosAleatorios.sort(() => Math.random() - 0.5);
+    setPanelPremios(premiosAleatorios.slice(0, 9));
+  };
+
+  useEffect(() => {
+    asignarPremiosAlPanel();
+  }, []);
 
   return (
     <>
       {showGameContainer && <GameContainer characterImage={characterImage} />}
       {gameContainerUnmounted && 
         <div className='container1'>
-          {playIsThisIt()}
-          <Carousel premios={premios} />
-          <div className='container2'>
-            <Carousel1Item premios={premios} />
-            <Button onButtonClick={handleButtonClick} />            
+          <Carousel premios={premios} pause={pauseCarousel} />
+          <div className='horizontal-container'>
+            <ItemContainer premios={panelPremios} pause={pauseCarousel} />
+
+            <ArcadeCabinet>
+
+              <CarouselUnItem premios={premios} pause={pauseCarousel} onVisibleChange={handleVisiblePremioChange}/>
+              <Button onButtonClick={handleButtonClick} />
+
+            </ArcadeCabinet>
+
+            <Panel premios={panelPremios} pause={pauseCarousel} />
           </div>
 
         </div>}
