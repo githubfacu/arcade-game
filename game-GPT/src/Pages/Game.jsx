@@ -18,8 +18,8 @@ const Game = () => {
   const [showGameContainer, setShowGameContainer] = useState(true);
   const [gameContainerUnmounted, setGameContainerUnmounted] = useState(false);
   const [pauseCarousel, setPauseCarousel] = useState(false);
-  const [visiblePremioIndex, setVisiblePremioIndex] = useState(0);
-  const [tirosRestantes, setTirosRestantes] = useState(3);
+  const [visiblePremioIndex, setVisiblePremioIndex] = useState(-1);
+  const [tirosRestantes, setTirosRestantes] = useState(9);
   const { playIsThisIt } = useSound();
   const [panelPremios, setPanelPremios] = useState([]);
 
@@ -52,8 +52,12 @@ const Game = () => {
 
 
   const handleButtonClick = () => {
+    
     const audio = new Audio('/Audios/bonus-alert-767.wav');
     audio.play();
+
+    const currentIndex = visiblePremioIndex;
+    console.log('Índice del premio visible:', currentIndex);    
 
     if (tirosRestantes > 0) {
 
@@ -62,10 +66,6 @@ const Game = () => {
         setPauseCarousel(false);
       }, 3000);
 
-      const currentIndex = visiblePremioIndex;
-      console.log('Índice del premio visible:', currentIndex);
-
-      // Puedes actualizar el estado de tirosRestantes y otras lógicas aquí
     }
   };
 
@@ -102,11 +102,11 @@ const Game = () => {
             <ArcadeCabinet>
 
               <CarouselUnItem premios={premios} pause={pauseCarousel} onVisibleChange={handleVisiblePremioChange}/>
-              <Button onButtonClick={handleButtonClick} />
+              <Button onButtonClick={handleButtonClick} pause={pauseCarousel} />
 
             </ArcadeCabinet>
 
-            <Panel premios={panelPremios} pause={pauseCarousel} />
+            <Panel premios={panelPremios} pause={pauseCarousel} indice={visiblePremioIndex}/>
           </div>
 
         </div>}

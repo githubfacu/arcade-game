@@ -8,19 +8,23 @@
     justify-self: flex-end;
 }
 
-.panel {
+.panel ul{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    list-style-type: none;
     gap: 15px;
-    margin-bottom: 15px;
-}
-  
-.casilla {
+    padding-left: 0%;
+    margin: 0;
 }
   
 .casilla img {
   width: 68px;
   height: 70px;
   filter: grayscale(100%);
+}
+
+.contenedor-de-premios p{
+  margin-top: 1.5rem;
+  margin-bottom: 0;
 }

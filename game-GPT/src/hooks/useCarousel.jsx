@@ -6,6 +6,7 @@ const useCarousel = (premios, pause, onVisibleChange, itemCount = 9, initialInde
   const [transition, setTransition] = useState(false);
 
   useEffect(() => {
+    
     const intervalId = setInterval(() => {
       if(!pause){
         setTransition(true);
