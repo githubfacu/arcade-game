@@ -12,7 +12,9 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: rgb(36, 4, 82);
+  background-color: rgb(27, 4, 82);
+  background-color: rgb(5, 4, 82);
+
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -46,7 +48,10 @@ h1 {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: rgb(10, 10, 10);
+    background-color: rgb(27, 4, 82);
+    background-color: rgb(5, 4, 82);
+
+    margin: 0;
   }
   a:hover {
     color: #747bff;

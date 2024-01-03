@@ -56,6 +56,8 @@ const Game = () => {
     const audio = new Audio('/Audios/bonus-alert-767.wav');
     audio.play();
 
+    setTirosRestantes((prev) => prev - 1)
+
     const currentIndex = visiblePremioIndex;
     console.log('Índice del premio visible:', currentIndex);    
 
@@ -73,12 +75,12 @@ const Game = () => {
     setVisiblePremioIndex(index);
   };
 
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   setTimeout(()=>{
-  //     playIsThisIt();
-  //   }, 3000)
-  // }, []);
+    setTimeout(()=>{
+      playIsThisIt();
+    }, 3000)
+  }, []);
 
   const asignarPremiosAlPanel = () => {
     const premiosAleatorios = [...premios];

@@ -89,6 +89,7 @@ const StartScreen = ({ onEnterPress }) => {
         justifyContent: 'center',
         color: 'white',
         border: '10px solid white',
+        cursor: 'none',
         transition: 'visibility 0.5s ease-in-out', // Agrega una transición
       }}
     >

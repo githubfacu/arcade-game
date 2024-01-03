@@ -1,19 +1,21 @@
 .juego-container {
-  width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 89%;
   background-color: rgb(10, 10, 10);
   box-shadow: 0 0 10px 5px #ff2aff;
   box-shadow: 0 0 10px 5px #2eff2a;
-  padding-left: 20px;
+  padding-right: 10px;
   padding-bottom: 20px;
-  align-self: center;
-  position: relative;
   margin-top: 3rem;
 }
 
 .premio {
-  width: 100px;
-  height: 102px;
-  margin-right: 20px;
+  width: 90px;
+  height: 90px;
+  margin-left: 20px;
+  margin-right: 0px;
   margin-top: 20px;
 }
 
