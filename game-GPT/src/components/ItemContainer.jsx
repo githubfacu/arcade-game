@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react';
 
-const ItemContainer = ({ premios, pause }) => {
+const ItemContainer = ({ premios, pause, tirosRestantes }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+
     if (pause) {
+      if (tirosRestantes === 0){
+        return console.log('fin de la funcion en Item Cointainer');
+      }      
       setTimeout(()=>{
         setCurrentIndex((prevIndex) => (prevIndex + 1) % premios.length);        
       },3000)
     }
-  }, [pause, premios]);
+  }, [pause]);
 
   const currentPremio = premios[currentIndex];
 

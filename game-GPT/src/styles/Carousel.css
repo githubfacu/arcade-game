@@ -3,12 +3,11 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 89%;
-  background-color: rgb(10, 10, 10);
-  box-shadow: 0 0 10px 5px #ff2aff;
-  box-shadow: 0 0 10px 5px #2eff2a;
+  background-color: rgb(10, 10, 10); 
   padding-right: 10px;
   padding-bottom: 20px;
   margin-top: 3rem;
+  transition: box-shadow .3s ease;
 }
 
 .premio {

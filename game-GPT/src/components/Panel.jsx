@@ -5,6 +5,8 @@ const Panel = ({ premios, pause, indice }) => {
   const [itemsArr, setItemsArr] = useState([])
   const [score, setScore] = useState(0)
   const items = premios
+  const correctAnswer = new Audio('/Audios/bonus-alert-767.wav');
+  const wrongAnswer = new Audio('/Audios/wrong-answer-buzz-950.wav');
 
 
   const renderizarElemento = (index) => {
@@ -56,6 +58,10 @@ const Panel = ({ premios, pause, indice }) => {
     const index = itemsArr.length -1
     if(pause === true && itemsArr[index] === items[index]){
       setScore((prev) => prev + 1)
+      correctAnswer.play()
+    }
+    if(pause === true && itemsArr[index] !== items[index]){
+      wrongAnswer.play()
     }
   }, [itemsArr]);
 

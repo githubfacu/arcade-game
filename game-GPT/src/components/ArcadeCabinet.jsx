@@ -5,10 +5,11 @@ const ArcadeCabinet = (props) => {
 
     const carousel = props.children[0]
     const boton = props.children[1]
+    const palanca = props.children[2]
 
   return (
     <div className="container">
-  <div className="arcade-machine">
+    <div className="arcade-machine">
     <div className="shadow"></div>
     <div className="top">
       <div className="stripes"></div>
@@ -21,10 +22,10 @@ const ArcadeCabinet = (props) => {
           {carousel}
         </div>
       </div>
-      <div className="joystick">
-        <div className="stick"></div>
-      </div>
     </div>
+      <div className="joystick">
+        <div>{palanca}</div>
+      </div>    
     <div className="board">
         <div style={{marginTop:'7%'}}>{boton}</div>
     </div>

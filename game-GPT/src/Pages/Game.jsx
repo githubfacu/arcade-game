@@ -9,6 +9,7 @@ import Panel from '../components/Panel';
 import ArcadeCabinet from '../components/ArcadeCabinet';
 import ItemContainer from '../components/ItemContainer';
 import '../styles/Game.css'
+import PalancaSwitch from '../components/PalancaSwitch';
 
 const Game = () => {
   const location = useLocation();
@@ -22,6 +23,10 @@ const Game = () => {
   const [tirosRestantes, setTirosRestantes] = useState(9);
   const { playIsThisIt } = useSound();
   const [panelPremios, setPanelPremios] = useState([]);
+  const [neonSwitch, setNeonSwitch] = useState(false)
+
+  const jostickAudio = new Audio('/Audios/switch-150130.mp3');
+  const lucesAudio = new Audio('/Audios/metallic-sci-fi-drop-888.wav');
 
   const premios = [
     { id: 1, src: '/Images/premios/Binary_Land_Cake.png', hidden: false, name: 'Cake', verticalName: 'C\na\nk\ne', alt: 'Premio 1' },
@@ -36,7 +41,6 @@ const Game = () => {
   ];
 
   useEffect(() => {
-
     if(sessionStorage.getItem('pin')){
       const timeoutId = setTimeout(() => {
         setShowGameContainer(false);
@@ -47,27 +51,23 @@ const Game = () => {
     }else{
       window.location.replace('/character-selection')
     }
-
   }, []);
 
 
   const handleButtonClick = () => {
-    
-    const audio = new Audio('/Audios/bonus-alert-767.wav');
-    audio.play();
 
     setTirosRestantes((prev) => prev - 1)
 
     const currentIndex = visiblePremioIndex;
     console.log('Índice del premio visible:', currentIndex);    
 
-    if (tirosRestantes > 0) {
-
+    if (tirosRestantes > 1) {
       setPauseCarousel(true);
       setTimeout(() => {
         setPauseCarousel(false);
       }, 3000);
-
+    } else if(tirosRestantes === 1){
+      setPauseCarousel(true);
     }
   };
 
@@ -90,27 +90,42 @@ const Game = () => {
 
   useEffect(() => {
     asignarPremiosAlPanel();
+    setNeonSwitch(character === '2');    
   }, []);
+
+  const handleSwitchChange = () => {
+    jostickAudio.play()
+    lucesAudio.play()
+    setNeonSwitch(!neonSwitch);
+  };
+
+  const switchShadowSet = () => {
+    if(neonSwitch === false){
+      return '0 0 10px 5px #de40de'
+    } else{
+      return '0 0 10px 5px #31a9ff'
+    }
+  }
 
   return (
     <>
       {showGameContainer && <GameContainer characterImage={characterImage} />}
       {gameContainerUnmounted && 
-        <div className='container1'>
-          <Carousel premios={premios} pause={pauseCarousel} />
+        <div className='container1' style={{boxShadow: `${switchShadowSet()}`}}>
+          <Carousel premios={premios} pause={pauseCarousel} neonSwitch={neonSwitch} />
           <div className='horizontal-container'>
-            <ItemContainer premios={panelPremios} pause={pauseCarousel} />
+            <ItemContainer premios={panelPremios} pause={pauseCarousel} tirosRestantes={tirosRestantes}/>
 
             <ArcadeCabinet>
 
               <CarouselUnItem premios={premios} pause={pauseCarousel} onVisibleChange={handleVisiblePremioChange}/>
               <Button onButtonClick={handleButtonClick} pause={pauseCarousel} />
+              <PalancaSwitch neonSwitch={neonSwitch} onSwitchChange={handleSwitchChange} />
 
             </ArcadeCabinet>
 
             <Panel premios={panelPremios} pause={pauseCarousel} indice={visiblePremioIndex}/>
           </div>
-
         </div>}
     </>
   );

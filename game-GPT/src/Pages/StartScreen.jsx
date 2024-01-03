@@ -90,7 +90,7 @@ const StartScreen = ({ onEnterPress }) => {
         color: 'white',
         border: '10px solid white',
         cursor: 'none',
-        transition: 'visibility 0.5s ease-in-out', // Agrega una transición
+        transition: 'visibility 0.5s ease-in-out',
       }}
     >
       <img src="/Images/Binary Land 50.png" alt="logo" style={{ marginBottom: '.5rem', maxWidth: '50%'}}/>

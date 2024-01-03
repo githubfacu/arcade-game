@@ -117,47 +117,12 @@
     background-image: repeating-linear-gradient(0deg, #313332, #313332 15px, #4a4d4c 15px, #4a4d4c 16px);
     animation: translate 1s infinite;
   }
-
-  .arcade-machine .screen-container .joystick {
-    height: 6%;
-    width: 5%;
-    background: #0F90C9;
+  .arcade-machine .joystick {
     position: absolute;
-    top: 91%;
-    left: 17%;
-    border-radius: 50%;
-    border: 5px solid #4c4c4c;
-    z-index: 3;
-    filter: grayscale(100%);
-  }
-  .arcade-machine .screen-container .joystick:before {
-    height: 90%;
-    width: 65%;
-    position: absolute;
-    top: 7%;
-    left: 32%;
-    background: #0d78a8;
-    content: "";
-    border-radius: 50%;
-  }
-  .arcade-machine .screen-container .joystick .stick {
-    height: 200%;
-    width: 40%;
-    position: absolute;
-    top: 100%;
-    left: 30%;
-    background: #4c4c4c;
-    content: "";
-  }
-  .arcade-machine .screen-container .joystick .stick:before {
-    height: 100%;
-    width: 150%;
-    transform: rotate(90deg);
-    position: absolute;
-    top: 50%;
-    left: -20%;
-    background: #4c4c4c;
-    content: "";
+    bottom: 30%;
+    left: 25%;
+    z-index: 2;
+    transform: scale(.75);
   }
   .arcade-machine .board {
     height: 40%;

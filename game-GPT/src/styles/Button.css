@@ -6,7 +6,7 @@
 	text-align:center;
 	display: inline-block;
 	width: 70px;
-  height: 55px;
+  height: 65px;
   border: none;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
@@ -24,6 +24,7 @@
 	background-image: -moz-linear-gradient(left top, pink 3%, red 22%, maroon 99%);
 	background-image: -webkit-linear-gradient(left top, pink 3%, red 22%, maroon 99%);
 	background-image: linear-gradient(left top, pink 3%, red 22%, maroon 99%);
+	transform: scale(.9);
 }
 
 .video-game-button:active{
@@ -34,5 +35,5 @@
 
 .video-game-button:hover{
 	cursor: url('../Images/cursor\ gamer\ .cur'), auto;
-	transform: scale(.9);
+	transform: scale(.8);
 }
