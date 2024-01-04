@@ -5,7 +5,7 @@ const StartScreen = ({ onEnterPress }) => {
   const [visible, setVisible] = useState(true);
   const navigate = useNavigate(); 
   const startScreenRef = useRef();
-  const audio = new Audio('/Audios/init.wav');
+  const audio = new Audio('/Audios/init.mp3');
 
   const temporizador = () => {setInterval(() => {
       setTimeout(() => {

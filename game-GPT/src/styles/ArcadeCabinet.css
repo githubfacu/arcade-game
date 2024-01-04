@@ -181,46 +181,8 @@
     left: 20%;
     height: 30%;
     width: 30%;
-    /*animation: bounce 0.8s infinite;*/
-  }
-
-  footer {
-    text-align: center;
-    font-family: "Quicksand", sans-serif;
-    margin-top: -30px;
-  }
-  footer h3 {
-    color: #4B5B61;
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-  }
-  footer h3 span {
-    color: #2995aa;
-  }
-  footer h4 {
-    color: #87aebc;
-    font-size: 1rem;
-    margin-bottom: 10px;
-  }
-  footer p {
-    font-size: 0.9rem;
-    color: #7a9098;
-  }
-  footer p a {
-    color: #3d9cbf;
   }
   
-  @keyframes bounce {
-    from {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-5px);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
   @keyframes translate {
     from {
       top: 0;

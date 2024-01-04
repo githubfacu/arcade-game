@@ -38,7 +38,75 @@
     margin-left: -3rem;
 }
 
-.itemContain h3{
+.itemContain .vertical-name{
     margin-bottom: 0;
     margin-top: 0;
 }
+
+.itemContain .name{
+    position: absolute;
+    opacity: 0;
+}
+
+@media (max-width: 1062px){
+    .juego-container{
+      max-width: 680px;
+    }
+
+    .horizontal-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 0 0 2rem 4rem;
+    }
+
+    .arcade-machine .container{
+        width: 50%;
+        padding-left: 2rem;
+    }
+
+    .contenedor-de-premios{
+        margin: 0 6rem;
+    }
+  }
+
+  @media (max-width: 754px){
+    .juego-container{
+        width: 95%;
+      }
+    .horizontal-container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 2rem 0;
+
+    }
+    .itemContain{
+        margin: 0 5rem;
+        width: 240px;
+        padding: 0;
+        justify-content: flex-start;
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+    .itemContain img{
+        width: 90px;
+        height: 90px;
+        margin: 0;
+        margin-top: .5rem;
+    }
+    .itemContain .vertical-name{
+        display: none;
+    }
+    .itemContain .name{
+        opacity: 1;
+        position: relative;
+        margin: .5rem;
+    }
+  }
+
+  @media (max-width: 660px){
+    .juego-container{
+      width: 340px;
+    }
+  }

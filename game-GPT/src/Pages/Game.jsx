@@ -25,7 +25,7 @@ const Game = () => {
   const [panelPremios, setPanelPremios] = useState([]);
   const [neonSwitch, setNeonSwitch] = useState(false)
 
-  const jostickAudio = new Audio('/Audios/switch-150130.mp3');
+  const jostickAudio = new Audio('/Audios/half-switch-150130.mp3');
   const lucesAudio = new Audio('/Audios/metallic-sci-fi-drop-888.wav');
 
   const premios = [
@@ -124,7 +124,7 @@ const Game = () => {
 
             </ArcadeCabinet>
 
-            <Panel premios={panelPremios} pause={pauseCarousel} indice={visiblePremioIndex}/>
+            <Panel premios={panelPremios} pause={pauseCarousel} indice={visiblePremioIndex} tirosRestantes={tirosRestantes} />
           </div>
         </div>}
     </>

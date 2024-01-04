@@ -33,11 +33,6 @@ const ArcadeCabinet = (props) => {
       <div className="stripes"></div>
     </div>
   </div>
-  {/* <footer>
-    <h3>Arcade Cabinet made with pure CSS by <span>Jhonny Gil</span></h3>
-    <h4>Dedicated to the great Book Ready Player One by Ernest Cline</h4>
-    <p>Original Dribbble Shot by <a href="https://dribbble.com/shots/2441190-Ready-Player-One">Ryan Prudhomme</a></p>
-  </footer> */}
 </div>
   )
 }

@@ -22,7 +22,8 @@ const ItemContainer = ({ premios, pause, tirosRestantes }) => {
         {currentPremio &&
           <>
             <img src={currentPremio.src} alt="item-premio" />
-            <h3>{currentPremio.verticalName}</h3>
+            <h3 className='vertical-name'>{currentPremio.verticalName}</h3>
+            <h3 className='name'>{currentPremio.name}</h3>
           </>
         }
     </div>

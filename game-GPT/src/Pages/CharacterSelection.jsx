@@ -6,6 +6,8 @@ import '../styles/CharacterSelection.css'
 const CharacterSelection = () => {
   const navigate = useNavigate();
   const { pauseIsThisIt } = useSound();
+  const startAudio = new Audio('Audios/start.mp3');
+  const selectAudio = new Audio('/Audios/select.mp3');  
 
   pauseIsThisIt();
 
@@ -18,15 +20,13 @@ const CharacterSelection = () => {
   }, []);
 
   const handleCharacterClick = async (character) => {
-    const audio = new Audio('Audios/start.wav');
-    await audio.play();
+    await startAudio.play();
     sessionStorage.setItem('pin', 'A')
     navigate(`/game?character=${character}`);
   };
 
   const handleCharacterHover = () => {
-    const audio = new Audio('/Audios/select.wav');
-    audio.play();
+    selectAudio.play();
   };
 
   return (
