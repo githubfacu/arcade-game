@@ -15,7 +15,7 @@
     height: 1.75em;
     opacity: 0;
     transition: transform 0.21s cubic-bezier(0.65, 1.35, 0.5, 1);
-	cursor: url('../Images/cursor\ gamer\ .cur'), auto;
+	  cursor: var(--cursor-gamer);
   }
   .toggle-input:checked {
     transform: rotate(25deg);
@@ -47,9 +47,10 @@
     position: relative;
     z-index: 1;
     border-radius: 50%;
-    width: 1.75em;
-    height: 1.75em;
-    background-image: radial-gradient(farthest-corner at 70% 30%, #ff7887 4%, #e10e0e 12% 24%, rgb(201, 9, 9) 50% 65%, #bf0b0b 75%);
+    width: 1.65em;
+    height: 1.65em;
+    background-image: radial-gradient(farthest-corner at 70% 30%, #ff7887 4%, #cd0000 12% 24%, rgb(201, 9, 9) 50% 65%, #d63534 75%);
+    /*background-image: radial-gradient(farthest-corner at 70% 30%, #fedee2 4%, #d63534 12% 24%, #a81a1a 50% 65%, #d63534 75%);*/
     transition: transform 0.21s cubic-bezier(0.65, 1.35, 0.5, 1);
   }
   .toggle-input:checked + .toggle-handle-wrapper .toggle-handle-knob {
@@ -63,7 +64,7 @@
     border-radius: inherit;
     width: 100%;
     height: 100%;
-    box-shadow: inset 0 0 8px 2px rgba(255, 255, 255, 0.4);
+    box-shadow: inset 0 0 8px 2px rgba(255, 255, 255, 0.3);
     opacity: 0;
     transition: opacity 0.2s;
   }
@@ -85,7 +86,7 @@
     left: 0;
     width: 100%;
     height: calc(100% + 0.875em);
-    background-image: linear-gradient(to right, #777475, #a4a4a4, #fff 45% 55%, #a4a4a4, #777475);
+    background-image: linear-gradient(to right, #777475, #a4a4a4, #1a1a1a 45% 55%, #a4a4a4, #777475);
     background-position-x: 0.06125em;
     transition: background-position-x 0.21s cubic-bezier(0.65, 1.35, 0.5, 1);
     box-shadow: inset 0 1em 0.25em rgba(0, 0, 0, 0.4);

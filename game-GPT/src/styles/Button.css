@@ -12,18 +12,18 @@
 	-moz-border-radius: 50%;
 	-o-border-radius: 50%;
 		border-radius: 50%;
-	background-color: red;
+	background-color: #cd0000;
 	-webkit-box-shadow:  0 6px maroon;
 	-moz-box-shadow:  0 6px maroon;
 	-o-box-shadow:  0 6px maroon;
 	box-shadow:  0 6px maroon;
-	color: red;
+	color: #cd0000;
 	margin-top: 3rem;
-	background-color: red;
-	background-image: -o-linear-gradient(left top, pink 3%, red 22%, maroon 99%);
-	background-image: -moz-linear-gradient(left top, pink 3%, red 22%, maroon 99%);
-	background-image: -webkit-linear-gradient(left top, pink 3%, red 22%, maroon 99%);
-	background-image: linear-gradient(left top, pink 3%, red 22%, maroon 99%);
+	background-color: #cd0000;
+	background-image: -o-linear-gradient(left top, pink 3%, #cd0000 22%, maroon 99%);
+	background-image: -moz-linear-gradient(left top, pink 3%, #cd0000 22%, maroon 99%);
+	background-image: -webkit-linear-gradient(left top, pink 3%, #cd0000 22%, maroon 99%);
+	background-image: linear-gradient(left top, pink 3%, #cd0000 22%, maroon 99%);
 	transform: scale(.9);
 }
 
@@ -34,6 +34,11 @@
 }
 
 .video-game-button:hover{
-	cursor: url('../Images/cursor\ gamer\ .cur'), auto;
-	transform: scale(.8);
+	cursor: var(--cursor-gamer);
+	background-color: red;
+	color: red;
+	background-image: -o-linear-gradient(left top, pink 3%, red 22%, maroon 99%);
+	background-image: -moz-linear-gradient(left top, pink 3%, red 22%, maroon 99%);
+	background-image: -webkit-linear-gradient(left top, pink 3%, red 22%, maroon 99%);
+	background-image: linear-gradient(left top, pink 3%, red 22%, maroon 99%);
 }

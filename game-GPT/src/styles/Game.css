@@ -48,6 +48,32 @@
     opacity: 0;
 }
 
+.a-btn{
+	background: #7C7C7C;
+	border-bottom: 6px inset rgba(0,0,0,.5);
+	border-left: 6px inset rgba(0,0,0,.5);
+	border-right: 6px inset rgba(255,255,255,.5);
+	border-top: 6px inset rgba(255,255,255,.5);
+	box-sizing: border-box;
+	color: white;
+	display: inline-block;
+	font-size: 1.1rem;
+	width: 105px;
+	padding: .3rem 0 .1rem;
+    position: absolute;
+    left: 1.5rem;
+    bottom: 1rem;
+}
+.a-btn:focus, .a-btn:hover{
+	background: #BCBCBC;
+}
+.a-btn{
+	background: rgb(168, 16, 5);
+}
+.a-btn:focus, .a-btn:hover{
+	background: rgb(194, 13, 4);
+}
+
 @media (max-width: 1062px){
     .juego-container{
       max-width: 680px;
@@ -84,29 +110,36 @@
     .itemContain{
         margin: 0 5rem;
         width: 240px;
+        height: 80px;
         padding: 0;
         justify-content: flex-start;
-        flex-direction: column;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
+        position: relative;
     }
     .itemContain img{
         width: 90px;
         height: 90px;
-        margin: 0;
-        margin-top: .5rem;
+        position: absolute;
+        left: 230px;
+        top: 15px;
     }
     .itemContain .vertical-name{
         display: none;
     }
     .itemContain .name{
         opacity: 1;
-        position: relative;
-        margin: .5rem;
+        position: absolute;
+        left: 20px;
     }
   }
 
   @media (max-width: 660px){
     .juego-container{
       width: 340px;
+    }
+    .a-btn{
+        font-size: 0px;
+        width: 50px;
+        height: 50px;
     }
   }

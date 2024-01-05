@@ -1,11 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSound } from '../Context/SoundContext';
 
 const StartScreen = ({ onEnterPress }) => {
   const [visible, setVisible] = useState(true);
+  const { pauseIsThisIt } = useSound();
   const navigate = useNavigate(); 
   const startScreenRef = useRef();
   const audio = new Audio('/Audios/init.mp3');
+
+  pauseIsThisIt();
 
   const temporizador = () => {setInterval(() => {
       setTimeout(() => {
@@ -25,21 +29,20 @@ const StartScreen = ({ onEnterPress }) => {
   const handleKeyPress = async (event) => {
     console.log('Key pressed:', event.key);
     if (event.key === 'Enter') {
-
+      sessionStorage.setItem('pin', 'A')
       await audio.play();
 
       setTimeout(() => {
-        sessionStorage.setItem('pin', 'A')
         navigate('/character-selection');
       }, 2000);
     }
   };
 
   const handleMouseClick = async () => {
+    sessionStorage.setItem('pin', 'A')    
     await audio.play();
 
     setTimeout(() => {
-      sessionStorage.setItem('pin', 'A')
       navigate('/character-selection');
     }, 2000);
   };

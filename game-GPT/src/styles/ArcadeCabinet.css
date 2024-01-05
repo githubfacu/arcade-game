@@ -36,7 +36,7 @@
     position: absolute;
     top: 0%;
     left: 45%;
-    background: #68A691;
+    background: #688ca6;
   }
   .arcade-machine .stripes:before, .arcade-machine .stripes:after {
     height: 100%;
@@ -69,7 +69,8 @@
     position: absolute;
     top: 15%;
     left: 19%;
-    background: #4b5b61;
+    /*background: #4b5b61;*/
+    background: #2a2a2a;
     border: 5px solid #4c4c4c;
     z-index: 1;
   }
@@ -106,6 +107,7 @@
     left: 11%;
     background: #313332;
     border: 5px solid #4c4c4c;
+    box-shadow: 0 0 10px 5px rgb(255, 255, 255);
     border-radius: 90px 93px 93px 93px/15px 15px 15px 15px;
     overflow: hidden;
     text-align: center;
@@ -130,7 +132,7 @@
     position: absolute;
     top: 52%;
     left: 18.2%;
-    background: #4B5B61;
+    background: #2a2a2a;
     transform: rotateX(70deg);
   }
   .arcade-machine .board:before, .arcade-machine .board:after {

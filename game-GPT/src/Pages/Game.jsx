@@ -45,7 +45,7 @@ const Game = () => {
       const timeoutId = setTimeout(() => {
         setShowGameContainer(false);
         setGameContainerUnmounted(true);
-        //sessionStorage.clear()
+        sessionStorage.clear()
       }, 3000);
     return () => clearTimeout(timeoutId);      
     }else{
@@ -107,6 +107,10 @@ const Game = () => {
     }
   }
 
+  const navigateButton = () => {
+    navigate('/');
+  };
+
   return (
     <>
       {showGameContainer && <GameContainer characterImage={characterImage} />}
@@ -126,6 +130,7 @@ const Game = () => {
 
             <Panel premios={panelPremios} pause={pauseCarousel} indice={visiblePremioIndex} tirosRestantes={tirosRestantes} />
           </div>
+          <a className='a-btn' onClick={navigateButton}>RESET</a>
         </div>}
     </>
   );

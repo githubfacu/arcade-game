@@ -17,7 +17,7 @@ const Carousel = ({ premios, pause, neonSwitch }) => {
   return (
     <div className="juego-container" style={{boxShadow: `${switchShadowSet()}`}}>
       {visiblePremios.map((premio) => (
-        <Premio key={premio.id} src={premio.src} alt={premio.alt} hidden={premio.hidden} />
+        <Premio key={premio.id} src={premio.src} alt={premio.alt} />
       ))}
     </div>
     

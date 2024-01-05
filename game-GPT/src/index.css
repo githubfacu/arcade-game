@@ -19,16 +19,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --cursor-gamer: url('/Images/cursor-gamer.cur'), auto;
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-} 
 
 body {
   margin: 0;
@@ -36,7 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  cursor: url('../Images/cursor\ gamer\ .cur'), auto;
+  cursor: var(--cursor-gamer);
 }
 
 h1 {
@@ -50,11 +42,5 @@ h1 {
     background-color: rgb(5, 4, 82);
     background-color: rgb(27, 4, 82);
     margin: 0;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
   }
 }
