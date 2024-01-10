@@ -1,11 +1,12 @@
 .fondo{
     background: rgb(10, 10, 10);
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
     padding: 4rem 4rem 7rem;
-  
 }
 
 .personajes{
@@ -22,4 +23,19 @@
 
 .personajes img:hover{
     transform: scale(1.15);
+}
+
+@media (max-width: 754px){
+    .fondo{
+        padding-top: 1.5rem;
+    }
+    .fondo .select{
+        font-size: 1.1rem;
+    }
+    .personajes{
+        flex-direction: column;
+    }
+    .personajes img{
+        margin: 2rem;
+    }
 }

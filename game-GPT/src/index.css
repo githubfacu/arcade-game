@@ -20,6 +20,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --cursor-gamer: url('/Images/cursor-gamer.cur'), auto;
+  height: 100vh;
 }
 
 body {
@@ -32,7 +33,7 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 3.2rem;
   line-height: 1.1;
 }
 
